@@ -1,0 +1,140 @@
+#page_login {
+	background-image:url(background.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+#page_index {
+	background-image:url(background.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+	-moz-background-size:cover;
+	-webkit-background-size:cover;
+}
+#page_index h1 {
+	background:rgba(0,0,0,0.2)
+}
+.main-box {
+	background:rgba(255,255,255,0.65)
+}
+.main-content {
+	box-shadow:none
+}
+.sidebar {
+	box-shadow:0 0 20px rgba(0,0,0,0.5);
+	background:none!important
+}
+.menu li {
+	transition:all 0.5s ease
+}
+.menu li:hover {
+	background:rgba(0,0,0,0.5);
+	transition:all 2s ease
+}
+.menu li a {
+	transition:all 0.5s ease
+}
+.menu li a:hover {
+	transition:all 2s ease;
+	color:white
+}
+.fwin {
+	box-shadow:0 0 10px rgba(0,0,0,0.5);
+	background-color:rgba(255,255,255,0.85);
+	border:none;
+	padding:0
+}
+.fwin .fcontent {
+	border:none
+}
+.fwin .btns {
+	border:none
+}
+.fwin h3 {
+	width:390px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	background:rgba(0,0,0,0.5);
+	padding:0 0 0 10px;
+	color:white
+}
+.btn.submit,input[type=submit],button,.btn {
+	color:#000;
+	border:1px solid rgba(255,255,255,0.5);
+	box-shadow:none!important;
+	background:rgba(255,255,255,0.5)!important;
+}
+.btn.submit:hover,input[type=submit]:hover {
+	color:#000;
+	border:1px solid rgba(255,255,255,0.5);
+	box-shadow:none!important;
+	background:rgba(255,255,255,0.5)!important;
+}
+.btn.submit:active,input[type=submit]:active {
+	color:#000;
+	border:1px solid rgba(255,255,255,0.5);
+	box-shadow:none!important;
+	background:rgba(255,255,255,0.5)!important;
+}
+.loading-icon {
+	box-shadow:0 0 5px rgba(0,0,0,0.5);
+	background:rgba(255,255,255,0.85)
+}
+.main-content table tr {
+	background:rgba(255,255,255,0.65);
+}
+.main-content table tbody tr:nth-child(odd) {
+	background:rgba(0,0,0,0.05);
+}
+.fwin .fcontent {
+	margin:0!important
+}
+.menu li.selected {
+	background:rgba(0,0,0,0.2)!important
+}
+#member-menu {
+	box-shadow:0 0 20px rgba(0,0,0,0.5);
+	background:rgba(0,0,0,0.5)!important
+}
+@media (max-width:550px) {
+	.fwin h3 {
+	width:290px;
+	background:rgba(0,0,0,0.5);
+	padding:0 0 0 10px;
+	color:white;
+	border-radius:0!important
+}
+#page_index .main-box {
+	width:100%;
+	top:5px;
+	margin:0;
+	padding:0
+}
+.main-box>h1 {
+	margin-right:0!important
+}
+.wrapper {
+	padding:0
+}
+.main-wrapper {
+	margin:0
+}
+.sidebar {
+	box-shadow:0 0 20px rgba(0,0,0,0.5);
+	background:rgba(0,0,0,0.5)!important
+}
+}#page_login .center-box {
+	background:rgba(255,255,255,0.5)!important
+}
+#page_login .side-bar {
+	background:rgba(0,0,0,0.15)!important
+}
+.btn.red {
+	color:red;
+}
+.btn.red:hover {
+	color:red;
+}
