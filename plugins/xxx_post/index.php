@@ -75,11 +75,11 @@ table.x_table thead tr{background-color:#dedede;}
 		<p>
 			客户端类型：
 		<select name="x_p_client_type" id="x_p_client_type" disabled>
-		  <option value="1">iPhone</option>
+		  <option value="1">iPhone(可能封禁)</option>
 		  <option value="2">Android</option>
 		  <option value="3">Windows Phone</option>
 		  <option value="4">Windows 8</option>
-		  <option value="5">随机选择一种</option>
+		  <option value="5">随机选择一种(不要选这个）</option>
 		</select>
 		</p>
 		<p>回帖频率：
