@@ -14,7 +14,7 @@ class plugin_xxx_post extends Plugin{
 		if(version_compare(VERSION, '1.14.4.24', '<')) showmessage('签到助手版本过低，请升级');
 	}
 	function page_footer_js() {
-		echo '<script src="plugins/xxx_post/main.js?version=1.14.6.2"></script>';
+		echo '<script src="plugins/xxx_post/main.js"></script>';
 	}
 	function install() {
 		$query = DB::query ( 'SHOW TABLES' );
@@ -207,7 +207,7 @@ EOF;
 				break;
 			case 'add-tieba' :
 				$tieba = $_POST ['xxx_post_add_tieba'];
-				$ch = curl_init ('http://tieba.baidu.com/f?kw='.urlencode(iconv("utf-8", "gbk", $tieba)).'&fr=index');
+				$ch = curl_init ('http://tieba.baidu.com/f?kw='.urlencode(iconv("utf-8", "utf-8", $tieba)).'&fr=index');
 				curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );
 				$contents = curl_exec ( $ch );
 				curl_close ( $ch );
@@ -221,7 +221,7 @@ EOF;
 				}
 				preg_match ( '/fname="(.+?)"/', $contents, $fnames );
 				$unicode_name = urlencode($fnames [1]);
-				$fname = $fnames [1];
+				$fname = iconv("utf-8", "utf-8", $fnames [1]);
 				DB::insert ( 'xxx_post_posts', array (
 					'uid' => $uid,
 					'fid' => $fid,
@@ -241,18 +241,18 @@ EOF;
 				$contents = curl_exec ( $ch );
 				curl_close ( $ch );
 				$fid = 0;
-				preg_match ( '/forum_id\:\s\"(?<fid>\d+)\"/', $contents, $fids );
+				preg_match ( '/"forum_id"\s?:\s?(?<fid>\d+)/', $contents, $fids );
 				$fid =$fids ['fid'];
 				if ($fid == 0) {
 					$data ['msg'] = "添加失败，请检查帖子地址并重试";
 					$data ['msgx'] = 0;
 					break;
 				}
-				preg_match ( '/fname=\"(.+?)\"/', $contents, $fnames );
+                preg_match ( '/fname=\"(.+?)\"/', $contents, $fnames );
 				$unicode_name = urlencode($fnames [1]);
-				$fname=$fnames [1];
-				preg_match ( '/title:\s\"(.*?)\"/', $contents, $post_names );
-				$post_name =$post_names [1];
+				$fname = iconv("utf-8", "utf-8", $fnames [1]);
+                preg_match ( '/title:\s?"(.*?)\"/', $contents, $post_names );
+				$post_name = iconv("utf-8", "utf-8", $post_names [1]);
 				DB::insert ( 'xxx_post_posts', array (
 						'uid' => $uid,
 						'fid' => $fid,
