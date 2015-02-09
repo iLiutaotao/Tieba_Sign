@@ -30,5 +30,16 @@ if(!defined('IN_KKFRAME')) exit();
 <p>感谢您的使用！</p><br>
 <p>程序作者：kookxiang (<a href="http://www.ikk.me" target="_blank">http://www.ikk.me</a>)</p>
 <p>提供方：LiuJiantao (<a href="http://www.liujiantao.me" target="_blank">http://www.liujiantao.me</a>)</p>
+<p>建议您30天后来更新您的百度账号cookie
+<script type="text/javascript">
+var __qqClockShare = {
+   content: "您的贴吧签到助手http://sign.liujiantao.me/百度账号cookie已经失效，请重新登陆",
+   time: "<?php echo date('Y-m-d H:m',time()+30*24*3600); ?>",
+   advance: 5,
+   url: "http://sign.liujiantao.me/",
+   icon: "2_1"
+};
+document.write('<a href="http://qzs.qq.com/snsapp/app/bee/widget/open.htm#content=' + encodeURIComponent(__qqClockShare.content) +'&time=' + encodeURIComponent(__qqClockShare.time) +'&advance=' + __qqClockShare.advance +'&url=' + encodeURIComponent(__qqClockShare.url) + '" target="_blank"><img src="http://i.gtimg.cn/snsapp/app/bee/widget/img/' + __qqClockShare.icon + '.png" style="border:0px;"/></a>');
+</script></p>
 </div>
 </div>
