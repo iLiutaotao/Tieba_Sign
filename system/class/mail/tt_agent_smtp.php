@@ -5,12 +5,12 @@ class iwch_agent_smtp extends mailer {
 	var $name = '代理SMTP发件';
 	var $description = '自定义SMTP账号，由支持SMTP的服务器代登录发送。插件版本：v1.0.3';
 	var $config = array(
-		array('SMTP服务器', 'host', '', 'smtp.ym.163.com'),
-		array('SMTP邮箱', 'mail', '', 'open_mail_api@iwch.me', ''),
-		array('SMTP用户名(一般与邮箱一致)', 'user', '', 'open_mail_api@iwch.me', ''),
+		array('SMTP服务器', 'host', '', 'smtp.qq.com'),
+		array('SMTP邮箱', 'mail', '', 'noreply@liujiantao.me', ''),
+		array('SMTP用户名(一般与邮箱一致)', 'user', '', 'noreply@liujiantao.me', ''),
 		array('SMTP密码', 'pass', '', '123456', ''),
-		array('SMTP发件人名称', 'fromname', '', 'IWCH-Open-Mail-System'),
-		array('API地址(推荐地址http://api.iwch.me/mail/smtp.php)', 'agentapi', '', 'http://api.iwch.me/mail/smtp.php'),
+		array('SMTP发件人名称', 'fromname', '', 'Open-Mail-System'),
+		array('API地址(推荐地址http://api.liujiantao.me/mail/smtp.php)', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
 		);
 	function isAvailable() {
 		return true;
