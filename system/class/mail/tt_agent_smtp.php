@@ -1,7 +1,7 @@
 <?php
 if (!defined('IN_KKFRAME')) exit('Access Denied');
-class iwch_agent_smtp extends mailer {
-	var $id = 'iwch_agent_smtp';
+class tt_agent_smtp extends mailer {
+	var $id = 'tt_agent_smtp';
 	var $name = '代理SMTP发件';
 	var $description = '自定义SMTP账号，由支持SMTP的服务器代登录发送。插件版本：v1.0.3';
 	var $config = array(
