@@ -42,7 +42,7 @@ $title = $extra_title ? "贴吧签到助手 - {$extra_title}" : '贴吧签到助
 <?php HOOK::page_contents(); ?>
 <!-- 开发不易，跪求各位大大放俺一条生路 -->
 <!-- 你可以在这加你自己的链接，但是麻烦保留下我的链接 Thanks -->
-<p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. 2014 &copy; 搭建在：<a href="http://lab.liujiantao.me" target="_blank">TT's Laboratory</a> - <a href="http://www.liujiantao.me/suibi/archives/281.html" target="_blank">赞助开发</a><br>
+<p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. <?php echo date('Y',time()); ?> &copy; 搭建在：<a href="http://lab.liujiantao.me" target="_blank">TT's Laboratory</a> - <a href="http://www.liujiantao.me/suibi/archives/281.html" target="_blank">赞助开发</a><br>
 <?php if(getSetting('beian_no')) echo '<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">'.getSetting('beian_no').'</a> - '; ?><?php HOOK::run('page_footer'); ?></p>
 </div>
 <?php include template('widget/footer'); ?>

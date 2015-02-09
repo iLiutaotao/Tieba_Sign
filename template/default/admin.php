@@ -214,7 +214,7 @@ if(getSetting('channel') == 'dev'){
 <p><button class="btn red">开始更新</button></p>
 </div>
 </div>
-<p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. 2014 &copy; 搭建在：<a href="http://lab.liujiantao.me" target="_blank">TT's Laboratory</a></p>
+<p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. <?php echo date('Y',time()); ?> &copy; 搭建在：<a href="http://lab.liujiantao.me" target="_blank">TT's Laboratory</a></p>
 </div>
 </div>
 <?php include template('widget/footer'); ?>
