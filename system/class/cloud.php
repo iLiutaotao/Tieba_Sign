@@ -2,9 +2,9 @@
 if (!defined('IN_KKFRAME')) exit();
 
 class cloud {
-	const API_ROOT = 'http://api.liujiantao.me/';
-	const API_ROOT_HTTPS = 'http://api.liujiantao.me/';
-	const API_ROOT_SAE = 'http://api.liujiantao.me/';
+	const API_ROOT = 'https://api.liujiantao.me/';
+	const API_ROOT_HTTPS = 'https://api.liujiantao.me/';
+	const API_ROOT_SAE = 'https://api.liujiantao.me/';
 	public static function init(){
 		list($id, $key) = self::_get_id_and_key();
 		if (!$id || !$key) define('CLOUD_NOT_INITED', true);
