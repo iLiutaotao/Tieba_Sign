@@ -2,15 +2,10 @@
 if (!defined('IN_KKFRAME')) exit('Access Denied');
 class tt_agent_smtp extends mailer {
 	var $id = 'tt_agent_smtp';
-	var $name = '代理SMTP发件';
-	var $description = '自定义SMTP账号，由支持SMTP的服务器代登录发送。插件版本：v1.0.3';
+	var $name = '涛涛开放云平台代理SMTP发件';
+	var $description = '开放云平台发送邮件服务，会以open-sign-report@liujiantao.me为发件人发送邮件主题为Open-Mail-System';
 	var $config = array(
-		array('SMTP服务器', 'host', '', 'smtp.qq.com'),
-		array('SMTP邮箱', 'mail', '', 'noreply@liujiantao.me', ''),
-		array('SMTP用户名(一般与邮箱一致)', 'user', '', 'noreply@liujiantao.me', ''),
-		array('SMTP密码', 'pass', '', '123456', ''),
-		array('SMTP发件人名称', 'fromname', '', 'Open-Mail-System'),
-		array('API地址(推荐地址http://api.liujiantao.me/mail/smtp.php)', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
+		array('API地址(推荐地址http://api.liujiantao.me/mail/smtp.php更新请见<a href="https://github.com/liujiantaoliu" target="_blank">GitHub</a>)', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
 		);
 	function isAvailable() {
 		return true;
@@ -29,11 +24,6 @@ class tt_agent_smtp extends mailer {
 		$data = array('to' => $mail -> address,
 			'title' => $mail -> subject,
 			'content' => $mail -> message,
-			'host' => $this -> _get_setting('host'),
-			'address' => $this -> _get_setting('mail'),
-			'user' => $this -> _get_setting('user'),
-			'pass' => $this -> _get_setting('pass'),
-			'fromname' => $this -> _get_setting('fromname'),
 			);
 		$agentapi = $this -> _get_setting('agentapi');
 		$sendresult = json_decode($this -> post($agentapi, $data), true);
