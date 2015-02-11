@@ -5,7 +5,7 @@ class tt_open_smtp extends mailer {
 	var $name = '涛涛开放云平台代理SMTP发件';
 	var $description = '开放云平台发送邮件服务，会以openmail@liujiantao.me为发件人发送邮件主题为Open-Mail-System';
 	var $config = array(
-		array('<p>API地址</p><p>推荐地址http://api.liujiantao.me/mail/smtp.php更新请见<a href="https://github.com/liujiantaoliu" target="_blank">GitHub</a></p>', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
+		array('<p>推荐地址</p><p>http://api.liujiantao.me/mail/smtp.php</p><p>更新请见<a href="https://github.com/liujiantaoliu" target="_blank">GitHub</a></p>API地址', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
 		);
 	function isAvailable() {
 		return true;
