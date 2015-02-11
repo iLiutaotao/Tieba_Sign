@@ -1,11 +1,11 @@
 <?php
 if (!defined('IN_KKFRAME')) exit('Access Denied');
-class tt_agent_smtp extends mailer {
-	var $id = 'tt_agent_smtp';
+class tt_open_smtp extends mailer {
+	var $id = 'tt_open_smtp';
 	var $name = '涛涛开放云平台代理SMTP发件';
-	var $description = '开放云平台发送邮件服务，会以open-sign-report@liujiantao.me为发件人发送邮件主题为Open-Mail-System';
+	var $description = '开放云平台发送邮件服务，会以openmail@liujiantao.me为发件人发送邮件主题为Open-Mail-System';
 	var $config = array(
-		array('API地址(推荐地址http://api.liujiantao.me/mail/smtp.php更新请见<a href="https://github.com/liujiantaoliu" target="_blank">GitHub</a>)', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
+		array('<p>API地址</p><p>推荐地址http://api.liujiantao.me/mail/smtp.php更新请见<a href="https://github.com/liujiantaoliu" target="_blank">GitHub</a></p>', 'agentapi', '', 'http://api.liujiantao.me/mail/smtp.php'),
 		);
 	function isAvailable() {
 		return true;
@@ -21,7 +21,8 @@ class tt_agent_smtp extends mailer {
 		return $result;
 	}
 	function send($mail) {
-		$data = array('to' => $mail -> address,
+		$data = array(
+			'to' => $mail -> address,
 			'title' => $mail -> subject,
 			'content' => $mail -> message,
 			);
