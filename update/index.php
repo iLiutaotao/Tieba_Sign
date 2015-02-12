@@ -5,7 +5,7 @@ ini_set('max_execution_time', 60);
 define('UPDATE_DIR_TEMP', dirname(__FILE__).'/temp/');
 define('UPDATE_DIR_INSTALL', dirname(__FILE__).'/../');
 class AutoUpdate {
-	private $_log = false;
+	private $_log = true;
 	public $logFile = '.updatelog';
 	private $_lastError = null;
 	public $currentVersion = 0;
@@ -207,7 +207,7 @@ class AutoUpdate {
 }
 $update = new AutoUpdate(true);
 $update->currentVersion = VERSION_NAME; //版本号，整数
-$update->updateUrl = 'http://api.liujiantao.me/update'; //更新服务器URL
+$update->updateUrl = 'http://api.liujiantao.me/update/'; //更新服务器URL
 $latest = $update->checkUpdate();
 if ($latest !== false) {
 	if ($latest > $update->currentVersion) {
@@ -217,7 +217,7 @@ if ($latest !== false) {
 			showmessage('更新成功','../');
 		}
 		else {
-			showmessage('请打开GitHub下载更新','https://github.com/liujiantaoliu/Tieba_Sign',5);
+			showmessage('更新失败请打开GitHub下载更新','https://github.com/liujiantaoliu/Tieba_Sign',5);
 		}
 	}
 	else {
