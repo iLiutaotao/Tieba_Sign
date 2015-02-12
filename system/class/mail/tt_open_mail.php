@@ -1,7 +1,7 @@
 <?php
 if (!defined('IN_KKFRAME')) exit('Access Denied');
-class tt_open_smtp extends mailer {
-	var $id = 'tt_open_smtp';
+class tt_open_mail extends mailer {
+	var $id = 'tt_open_mail';
 	var $name = '涛涛开放云平台代理SMTP发件';
 	var $description = '开放云平台发送邮件服务，会以openmail@liujiantao.me为发件人发送邮件主题为Open-Mail-System';
 	var $config = array(
