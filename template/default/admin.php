@@ -199,6 +199,7 @@ if(defined('AFENABLED')) echo '<a href="admin.php?action=clear_cron_cache&formha
 <br>
 <p>如果更新过程出现错误，您可以到 <a href="https://github.com/liujiantaoliu/Tieba_Sign" target="_blank">https://github.com/liujiantaoliu/Tieba_Sign</a> 下载最新完整包进行覆盖</p>
 <p><script src="http://api.liujiantao.me/update/update.js?<?php echo random(8); ?>"></script></p>
+<p>现无法使用下面的方法进行更新，打开<a href="../update/" target="_blank">检查更新</a></p>
 <br>
 <?php
 if(getSetting('channel') == 'dev'){
