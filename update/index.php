@@ -1,5 +1,6 @@
 <?php 
 require "../system/common.inc.php";
+if(!is_admin($uid)) exit();
 if(!defined('IN_KKFRAME')) exit('Access Denied');
 ini_set('max_execution_time', 600);
 define('UPDATE_DIR_TEMP', dirname(__FILE__).'/temp/');
