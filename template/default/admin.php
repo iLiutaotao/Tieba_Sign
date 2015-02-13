@@ -197,10 +197,11 @@ if(defined('AFENABLED')) echo '<a href="admin.php?action=clear_cron_cache&formha
 <p>此功能将联网更新您的贴吧签到助手. 升级过程采用差量升级的方式.</p>
 <p>升级过程需要保证文件被更新的文件可读可写.</p>
 <br>
+<h2>更新信息</h2>
 <p>如果更新过程出现错误，您可以到 <a href="https://github.com/liujiantaoliu/Tieba_Sign" target="_blank">https://github.com/liujiantaoliu/Tieba_Sign</a> 下载最新完整包进行覆盖</p>
-<p><script src="http://api.liujiantao.me/update/update.js?<?php echo random(8); ?>"></script></p>
-<p>现无法使用下面的方法进行更新，打开<a href="../update/" target="_blank" class="btn red">检查更新</a></p>
+<p>当前版本:<?php echo VERSION_NAME; ?></p>
 <br>
+<h2>升级</h2>
 <?php
 if(getSetting('channel') == 'dev'){
 	echo '<p>当前分支：开发版 (<a id="switch_to_stable" href="javascript:;">切换到稳定版</a>)</p>';
@@ -209,12 +210,16 @@ if(getSetting('channel') == 'dev'){
 }
 ?>
 <p>开发版拥有更快的更新速度，但同时也拥有一定的不稳定性.</p>
+<p><a href="../update/" target="_blank" class="btn red">检查更新</a></p>
 <br>
+<!--<br>
 <p class="result">正在检查更新...</p>
 <div class="filelist hidden">
 <ul></ul>
 <p><button class="btn red">开始更新</button></p>
-</div>
+</div>-->
+<h2>更新日志</h2>
+<p><script src="http://api.liujiantao.me/update/update.js?<?php echo random(8); ?>"></script></p>
 </div>
 <p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. <?php echo date('Y',time()); ?> &copy; 搭建在：<a href="http://lab.liujiantao.me" target="_blank">TT's Laboratory</a></p>
 </div>
