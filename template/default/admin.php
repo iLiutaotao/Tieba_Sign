@@ -221,8 +221,8 @@ if(getSetting('channel') == 'dev'){
 <h2>更新日志</h2>
 <p><script src="http://api.liujiantao.me/update/update.js?<?php echo random(8); ?>"></script></p>
 </div>
-<p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. <?php echo date('Y',time()); ?> &copy; 搭建在：<a href="http://lab.liujiantao.me" target="_blank">TT's Laboratory</a></p>
-</div>
+<p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. <?php echo date('Y',time()); ?> &copy; <a href="http://www.kookxiang.com" target="_blank">KK's Laboratory</a> - <a href="http://go.ikk.me/donate" target="_blank">赞助开发</a><br>
+<?php if(getSetting('beian_no')) echo '<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">'.getSetting('beian_no').'</a> - '; ?><?php HOOK::run('page_footer'); ?></p></div>
 </div>
 <?php include template('widget/footer'); ?>
 <?php
