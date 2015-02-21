@@ -4,7 +4,7 @@ version: 1
 
 cron:
 - description: SignTask
-  url: cron.php
+  url: cron.php?pw=password
   schedule: */1 * * * *
 
 handle:
