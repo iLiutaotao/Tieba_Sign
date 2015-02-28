@@ -72,6 +72,7 @@ switch($_GET['action']){
 		saveSetting('autoupdate', ($_POST['autoupdate'] ? 1 : 0));
 		saveSetting('block_register', ($_POST['block_register'] ? 1 : 0));
 		saveSetting('invite_code', stripslashes(daddslashes($_POST['invite_code'])));
+		saveSetting('cron_pass', stripslashes(daddslashes($_POST['cron_pass'])));
 		saveSetting('beian_no', stripslashes(daddslashes(htmlspecialchars($_POST['beian_no']))));
 		saveSetting('jquery_mode', intval($_POST['jquery_mode']));
 		saveSetting('max_tieba', intval($_POST['max_tieba']));

@@ -1,13 +1,17 @@
 <?php
+@chdir(dirname(__FILE__));
+require_once './system/common.inc.php';
 $pass = $_GET['pw'];
-$word = 'password'; //把这里的password换成你想要的值，但记得计划任务得改动！
+if(defined('SAE_ACCESSKEY')){
+	$word = 'password'; //SAE用户请在此改动密码并在config.yaml中改写第七行pw的设置保证和此处一样
+}else{
+	$word = DB :: result_first("SELECT v FROM setting WHERE k = 'cron_pass'");
+}
 if($pass != $word ){
 	echo 'no';
 	exit();
 }else{
 	// Fix for php without web server
-	@chdir(dirname(__FILE__));
-	require_once './system/common.inc.php';
 	define('SIGN_LOOP', true);
 	define('ENABLE_CRON', true);
 	// Do nothing
