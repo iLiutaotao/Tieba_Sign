@@ -1,7 +1,6 @@
 <?php
 if(!defined('IN_KKFRAME')) exit('Access Denied');
 class Updater{
-	const UPDATE_SERVER = 'http://update.liujiantao.me/';
 	public static function init(){
 		global $_config;
 		if($_config['version']){
@@ -24,18 +23,13 @@ class Updater{
 		exit();
 	}
 	public static function check(){
-		$d = getSetting('channel') == 'dev' ? 'tieba_sign' : 'tieba_sign_stable';
-		$p = implode(',', self::_getPluginList());
-		$data = kk_fetch_url(self::UPDATE_SERVER."filelist.php?d={$d}&plugins={$p}");
+		$data = kk_fetch_url(cloud::UPDATE_URL."updata.php?action=filelist");
 		saveSetting('new_version', 0);
 		if (!$data) return -1;
-		$content = pack('H*', $data);
-		$file_list = unserialize($content);
-		unset($content);
+		$file_list = json_decode($data);
 		if (!$file_list) return -2;
 		$err_file = $list = array();
-		foreach($file_list as $file) {
-			list($path, $hash) = explode("\t", $file);
+		foreach($file_list as $path => $hash) {
 			$file_hash = md5_file(ROOT."./{$path}");
 			if ($file_hash != $hash){
 				$err_file[] = array($path, $hash);
@@ -106,8 +100,7 @@ class Updater{
 		return is_writable($path);
 	}
 	private static function _download_file($path, $hash, $try = 1) {
-		$d = getSetting('channel') == 'dev' ? 'tieba_sign' : 'tieba_sign_stable';
-		$content = kk_fetch_url(self::UPDATE_SERVER."get_file.php?d={$d}&f={$path}");
+		$content = kk_fetch_url(cloud::UPDATE_URL."updata.php?action=getfile&path={$path}");
 		if (!$content) {
 			if ($try == 3) {
 				return -1;

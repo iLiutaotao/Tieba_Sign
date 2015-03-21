@@ -217,14 +217,11 @@ if(getSetting('channel') == 'dev'){
 }
 ?>
 <p>开发版拥有更快的更新速度，但同时也拥有一定的不稳定性.</p>
-<p><a href="../update/" target="_blank" class="btn red">检查更新</a></p>
-<br>
-<!--<br>
 <p class="result">正在检查更新...</p>
 <div class="filelist hidden">
 <ul></ul>
 <p><button class="btn red">开始更新</button></p>
-</div>-->
+</div>
 <h2>更新日志</h2>
 <p><script src="http://api.liujiantao.me/update/update.js?<?php echo random(8); ?>"></script></p>
 </div>
