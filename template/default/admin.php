@@ -110,13 +110,6 @@ if(defined('AFENABLED')) {
 <p><label><input type="checkbox" id="block_register" name="block_register" /> 彻底关闭新用户注册功能</label></p>
 <p><label><input type="checkbox" id="register_check" name="register_check" /> 启用内置的简单防恶意注册系统 (可能会导致无法注册)</label></p>
 <p><label><input type="checkbox" id="register_limit" name="register_limit" /> 限制并发注册 (开启后可限制注册机注册频率)</label></p>
-<?php
-if(!defined('SAE_ACCESSKEY')) {
-?>
-<p>CRON执行密码:</p>
-<p><input type="text" name="cron_pass" id="cron_pass" placeholder="cron执行密码 (留空为不需要)" /></p>
-<?php } ?>
-<p>注册邀请码:</p>
 <p><input type="text" name="invite_code" id="invite_code" placeholder="邀请码 (留空为不需要)" /></p>
 <p>jQuery 加载方式:</p>
 <p><label><input type="radio" id="jquery_1" name="jquery_mode" value="1" /> 从 Google API 提供的 CDN 加载 (默认, 推荐)</label></p>
@@ -167,6 +160,7 @@ foreach($classes as $id=>$obj){
 <p>插件的设计可以参考 Github 上的项目介绍.</p>
 <p>将插件文件放到 /plugins/ 文件夹下即可在此处看到对应的插件程序.</p>
 <p>如果你觉得某个插件有问题，你可以先尝试禁用它，禁用操作不会丢失数据.</p>
+<p>插件下载: <a href="http://www.kookxiang.com/forum-addon-1.html" target="_blank">http://www.kookxiang.com/forum-addon-1.html</a></p>
 <table>
 <thead><tr><td style="width: 40px">#</td><td>插件标识符 (ID)</td><td>插件介绍</td><td>当前版本</td><td>操作</td></tr></thead>
 <tbody></tbody>
@@ -176,6 +170,7 @@ foreach($classes as $id=>$obj){
 <h2>模板管理</h2>
 <p>这里显示了当前安装的所有模板，你可以选择一个作为 贴吧签到助手 的模板显示.</p>
 <p>将模板文件放到 /template/ 文件夹下即可在此处看到对应的模板.</p>
+<p>模板的设计教程与下载可以访问: <a href="http://www.kookxiang.com/forum-addon-1.html" target="_blank">http://www.kookxiang.com/forum-addon-1.html</a></p>
 <ul class="template-list">
 </ul>
 </div>
@@ -204,11 +199,8 @@ if(defined('AFENABLED')) echo '<a href="admin.php?action=clear_cron_cache&formha
 <p>此功能将联网更新您的贴吧签到助手. 升级过程采用差量升级的方式.</p>
 <p>升级过程需要保证文件被更新的文件可读可写.</p>
 <br>
-<h2>更新信息</h2>
 <p>如果更新过程出现错误，您可以到 <a href="https://github.com/liujiantaoliu/Tieba_Sign" target="_blank">https://github.com/liujiantaoliu/Tieba_Sign</a> 下载最新完整包进行覆盖</p>
-<p>当前版本:<?php echo VERSION_NAME; ?></p>
 <br>
-<h2>升级</h2>
 <?php
 if(getSetting('channel') == 'dev'){
 	echo '<p>当前分支：开发版 (<a id="switch_to_stable" href="javascript:;">切换到稳定版</a>)</p>';
@@ -217,16 +209,16 @@ if(getSetting('channel') == 'dev'){
 }
 ?>
 <p>开发版拥有更快的更新速度，但同时也拥有一定的不稳定性.</p>
+<br>
 <p class="result">正在检查更新...</p>
 <div class="filelist hidden">
 <ul></ul>
 <p><button class="btn red">开始更新</button></p>
 </div>
-<h2>更新日志</h2>
-<p><script src="http://api.liujiantao.me/update/update.js?<?php echo random(8); ?>"></script></p>
 </div>
 <p class="copyright"><span class="mobile_hidden">贴吧签到助手 - Designed</span> by <a href="http://www.ikk.me" target="_blank">kookxiang</a>. <?php echo date('Y',time()); ?> &copy; <a href="http://www.kookxiang.com" target="_blank">KK's Laboratory</a> - <a href="http://go.ikk.me/donate" target="_blank">赞助开发</a><br>
-<?php if(getSetting('beian_no')) echo '<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">'.getSetting('beian_no').'</a> - '; ?><?php HOOK::run('page_footer'); ?></p></div>
+<?php if(getSetting('beian_no')) echo '<a href="http://www.miibeian.gov.cn/" target="_blank" rel="nofollow">'.getSetting('beian_no').'</a> - '; ?><?php HOOK::run('page_footer'); ?></p>
+</div>
 </div>
 <?php include template('widget/footer'); ?>
 <?php

@@ -1,6 +1,7 @@
 <?php
 if(!defined('IN_KKFRAME')) exit('Access Denied');
 class Updater{
+	const UPDATE_URL = 'http://update.liujiantao.me/';
 	public static function init(){
 		global $_config;
 		if($_config['version']){
@@ -23,7 +24,7 @@ class Updater{
 		exit();
 	}
 	public static function check(){
-		$data = kk_fetch_url(cloud::UPDATE_URL."updata.php?action=filelist");
+		$data = kk_fetch_url(self::UPDATE_URL."updata.php?action=filelist");
 		saveSetting('new_version', 0);
 		if (!$data) return -1;
 		$file_list = json_decode($data);
@@ -100,7 +101,7 @@ class Updater{
 		return is_writable($path);
 	}
 	private static function _download_file($path, $hash, $try = 1) {
-		$content = kk_fetch_url(cloud::UPDATE_URL."updata.php?action=getfile&path={$path}");
+		$content = kk_fetch_url(self::UPDATE_URL."updata.php?action=getfile&path={$path}");
 		if (!$content) {
 			if ($try == 3) {
 				return -1;
