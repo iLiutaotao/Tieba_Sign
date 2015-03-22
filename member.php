@@ -151,7 +151,7 @@ EOF;
 		$username = daddslashes($_POST['username']);
 		$un = strtolower($username);
 		if(strlen($username) > 24) showmessage('用户名过长，请修改', dreferer(), 5);
-		$user = DB::fetch_first("SELECT * FROM member WHERE username='{$username}'");
+		$user = DB::fetch_first("SELECT * FROM member WHERE username='{$username}' OR email='{$username}'");
 		$verified = Widget_Password::verify($user, $_POST['password']);
 		if($verified) {
 			$login_exp = TIMESTAMP + 3600;

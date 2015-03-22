@@ -4,7 +4,7 @@ if(!defined('IN_KKFRAME')) exit();
 <h1>登录</h1>
 <form method="post" action="member.php?action=login">
 <div class="login-info">
-<p>用户名：</p>
+<p>用户名/注册邮箱：</p>
 <p><input type="text" name="username" required tabindex="1" /></p>
 <p>密码 (<a href="javascript:;" onclick="switch_tabs('find_password');" tabindex="0">找回密码</a>)：</p>
 <p><input type="password" name="password" required tabindex="2" /></p>
