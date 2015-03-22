@@ -200,6 +200,7 @@ if(defined('AFENABLED')) echo '<a href="admin.php?action=clear_cron_cache&formha
 <p>升级过程需要保证文件被更新的文件可读可写.</p>
 <br>
 <p>如果更新过程出现错误，您可以到 <a href="https://github.com/liujiantaoliu/Tieba_Sign" target="_blank">https://github.com/liujiantaoliu/Tieba_Sign</a> 下载最新完整包进行覆盖</p>
+<p>But.That's ALL!</p>
 <br>
 <?php
 if(getSetting('channel') == 'dev'){
