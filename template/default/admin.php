@@ -110,6 +110,7 @@ if(defined('AFENABLED')) {
 <p><label><input type="checkbox" id="block_register" name="block_register" /> 彻底关闭新用户注册功能</label></p>
 <p><label><input type="checkbox" id="register_check" name="register_check" /> 启用内置的简单防恶意注册系统 (可能会导致无法注册)</label></p>
 <p><label><input type="checkbox" id="register_limit" name="register_limit" /> 限制并发注册 (开启后可限制注册机注册频率)</label></p>
+<p><input type="text" name="cron_pass" id="cron_pass" placeholder="cron执行密码 (留空为不需要)" /></p>
 <p><input type="text" name="invite_code" id="invite_code" placeholder="邀请码 (留空为不需要)" /></p>
 <p>jQuery 加载方式:</p>
 <p><label><input type="radio" id="jquery_1" name="jquery_mode" value="1" /> 从 Google API 提供的 CDN 加载 (默认, 推荐)</label></p>
